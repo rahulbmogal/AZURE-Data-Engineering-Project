@@ -6,15 +6,23 @@
 
 ## On-prem DB to Azure Cloud Pipeline with Data Factory, Lake Storage, Spark, Databricks, Synapse, PowerBI
 
-##Table of Contents
+## Table of Contents
+
 Project Overview
 Key Insights
+
 Project Architecture
+
 3.1. Data Ingestion
+
 3.2. Data Transformation
+
 3.3. Data Loading
+
 3.4. Data Reporting
+
 Credits
+
 Contact
 
 ## Project Overview
@@ -62,13 +70,32 @@ Connected the on-premise SQL Server with Azure using Microsoft Integration Runti
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Screenshot%202024-04-27%20171932.png?raw=true)
 
 ## Resources
-Setup the Resource group with needed services (Key Vault, Storage Account, Data Factory, Databricks, Synapse Analytics)
+In the initial phase of our project journey, we lay the foundation for our Azure data engineering pipeline by creating essential resources to facilitate seamless data ingestion, transformation, loading, and reporting. Leveraging Azure's robust ecosystem of services, we establish a comprehensive infrastructure tailored to our specific requirements. The following steps outline the creation of key resources:
+
+1. Setup Resource Group
+We begin by creating a dedicated resource group to house all the components of our data engineering solution. This resource group serves as a logical container for managing and organizing related Azure resources, providing a centralized hub for administration, monitoring, and access control.
+
+2. Key Vault
+Security is paramount in any data-driven endeavor, and Azure Key Vault emerges as a critical component in safeguarding sensitive information such as credentials, secrets, and encryption keys. By creating an Azure Key Vault instance within our resource group, we establish a secure repository for storing and managing cryptographic keys and secrets, ensuring robust data protection and compliance with regulatory standards.
+
+3. Storage Account
+Next, we provision an Azure Storage Account to serve as the primary data repository for our data engineering pipeline. This storage account offers scalable, durable, and highly available cloud storage, enabling seamless ingestion, storage, and retrieval of data assets. With support for multiple data types and access tiers, Azure Storage empowers us to accommodate diverse data workloads while optimizing cost and performance.
+
+4. Data Factory
+Azure Data Factory emerges as the orchestrator of our data workflows, facilitating seamless data movement and transformation across hybrid and multicloud environments. By deploying an instance of Azure Data Factory within our resource group, we gain a powerful ETL (Extract, Transform, Load) service capable of orchestrating complex data integration pipelines, automating data workflows, and orchestrating data movement at scale.
+
+5. Databricks
+For advanced data processing and analytics, we harness the capabilities of Azure Databricks, a unified analytics platform built on Apache Spark. By provisioning an Azure Databricks workspace within our resource group, we unlock a collaborative environment for data engineering, data science, and machine learning, empowering our team to leverage Spark's distributed computing capabilities for data exploration, transformation, and model training.
+
+6. Synapse Analytics
+Completing our resource lineup, we deploy Azure Synapse Analytics, a powerful analytics service that seamlessly integrates data warehousing, big data analytics, and data integration. By creating a Synapse Analytics instance within our resource group, we establish a unified analytics platform capable of processing massive volumes of structured and unstructured data, enabling comprehensive data analysis, reporting, and visualization.
 
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Resouces-for-dataengineering-project.png?raw=true)
 
 
 
 ## Migration
+In this phase of project, I  focus on seamlessly migrating data from our on-premises SQL Server environment to Azure Data Lake Storage.
 Migrated the tables from on-premise SQL Server to Azure Data Lake Storage Gen2.
 
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Copy%20all%20Tables.png?raw=true)
