@@ -13,13 +13,13 @@ Key Insights
 
 Project Architecture
 
-3.1. Data Ingestion
+1. Data Ingestion : Resource creation & Data Migration
 
-3.2. Data Transformation
+2. Data Transformation
 
-3.3. Data Loading
+3.  Data Loading
 
-3.4. Data Reporting
+4. Data Reporting
 
 Credits
 
@@ -63,38 +63,37 @@ You can find the detailed information on the diagram below:
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Project%20pverview.png?raw=true)
 
 ## Data Ingestion
-The data ingestion phase lays the foundation for our analytics journey, bridging the gap between on-premise data sources and the Azure cloud. Leveraging Microsoft Integration Runtime, we establish a secure and reliable connection between our on-premise SQL Server and Azure, enabling seamless data transfer to Azure Data Lake Storage Gen2. With Azure Data Factory orchestrating the ingestion process, we ensure efficient and scalable movement of data, setting the stage for subsequent analysis and insights generation.
+The data ingestion phase is the foundation for our analytics journey, bridging the gap between on-premise data sources and the Azure cloud by Microsoft Integration Runtime, I establish a secure and reliable connection between our on-premise SQL Server and Azure, enabling seamless data transfer to Azure Data Lake Storage Gen2. With Azure Data Factory orchestrating the ingestion process, I ensure efficient and scalable movement of th data.
 
-Connected the on-premise SQL Server with Azure using Microsoft Integration Runtime.
 
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Screenshot%202024-04-27%20171932.png?raw=true)
 
-## Resources
-In the initial phase of our project journey, we lay the foundation for our Azure data engineering pipeline by creating essential resources to facilitate seamless data ingestion, transformation, loading, and reporting. Leveraging Azure's robust ecosystem of services, we establish a comprehensive infrastructure tailored to our specific requirements. The following steps outline the creation of key resources:
+## Resource Creation
+In the initial phase of this project, I have created Azure data engineering pipeline by creating essential resources to facilitate seamless data ingestion, transformation, loading, and reporting.
 
 1. Setup Resource Group
-We begin by creating a dedicated resource group to house all the components of our data engineering solution. This resource group serves as a logical container for managing and organizing related Azure resources, providing a centralized hub for administration, monitoring, and access control.
+I begin with creating a dedicated resource group to house all the components of our data engineering solution. This resource group serves as a logical container for managing and organizing related Azure resources, providing a centralized hub for administration, monitoring, and access control.
 
 2. Key Vault
-Security is paramount in any data-driven endeavor, and Azure Key Vault emerges as a critical component in safeguarding sensitive information such as credentials, secrets, and encryption keys. By creating an Azure Key Vault instance within our resource group, we establish a secure repository for storing and managing cryptographic keys and secrets, ensuring robust data protection and compliance with regulatory standards.
+Security is important and Azure Key Vault emerges as a critical component in safeguarding sensitive information such as credentials, secrets, and encryption keys. By creating an Azure Key Vault instance within our resource group, I establish a secure repository for storing and managing keys and secrets, ensuring data protection.
 
 3. Storage Account
-Next, we provision an Azure Storage Account to serve as the primary data repository for our data engineering pipeline. This storage account offers scalable, durable, and highly available cloud storage, enabling seamless ingestion, storage, and retrieval of data assets. With support for multiple data types and access tiers, Azure Storage empowers us to accommodate diverse data workloads while optimizing cost and performance.
+Next, I crated an Azure Storage Account to serve as the primary data repository for the data engineering pipeline. This storage account offers scalable, durable, and highly available cloud storage, enabling seamless ingestion, storage, and retrieval of data assets. With support for multiple data types and access tiers, Azure Storage empowers us to accommodate diverse data workloads while optimizing cost and performance.
 
 4. Data Factory
 Azure Data Factory emerges as the orchestrator of our data workflows, facilitating seamless data movement and transformation across hybrid and multicloud environments. By deploying an instance of Azure Data Factory within our resource group, we gain a powerful ETL (Extract, Transform, Load) service capable of orchestrating complex data integration pipelines, automating data workflows, and orchestrating data movement at scale.
 
 5. Databricks
-For advanced data processing and analytics, we harness the capabilities of Azure Databricks, a unified analytics platform built on Apache Spark. By provisioning an Azure Databricks workspace within our resource group, we unlock a collaborative environment for data engineering, data science, and machine learning, empowering our team to leverage Spark's distributed computing capabilities for data exploration, transformation, and model training.
-
-6. Synapse Analytics
-Completing our resource lineup, we deploy Azure Synapse Analytics, a powerful analytics service that seamlessly integrates data warehousing, big data analytics, and data integration. By creating a Synapse Analytics instance within our resource group, we establish a unified analytics platform capable of processing massive volumes of structured and unstructured data, enabling comprehensive data analysis, reporting, and visualization.
+For advanced data processing and analytics, I have used Azure Databricks, a unified analytics platform built on Apache Spark. By provisioning an Azure Databricks workspace within our resource group, I done two stage transformation from Bronze to Silver and Silver to Gold as a clean data.
+ 
+7. Synapse Analytics
+I have used this resouce to load the cleaned data in to Azure SQL database through the pipeline and created the views for the tables present it it.
 
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Resouces-for-dataengineering-project.png?raw=true)
 
 
 
-## Migration
+## Data Migration
 In this phase of project, I  focus on seamlessly migrating data from our on-premises SQL Server environment to Azure Data Lake Storage.
 Migrated the tables from on-premise SQL Server to Azure Data Lake Storage Gen2.
 
@@ -116,19 +115,21 @@ Saved the cleaned data in a Delta format; optimized for further analysis.
 
 
 ## Data Loading
-In the data transformation phase, we unleash the power of Azure Databricks and Spark to unlock the full potential of our raw data. By mounting Azure Blob Storage to Databricks, we gain access to our data lake and embark on a journey of discovery and refinement. Utilizing the computational prowess of Spark clusters, we apply sophisticated transformations and data cleaning techniques to prepare our data for downstream processing. The resulting cleansed and refined datasets, stored in Delta format, are optimized for further analysis and insights extraction.
-
-Used Azure Synapse Analytics to load the refined data efficiently.
-Created SQL database and connected it to the data lake.
-synapse-pipeline db-synapse
+In the data loading stage, I utilized Azure Synapse Analytics to efficiently load the cleaned data into an Azure SQL database through the pipeline. Additionally, I created views for the tables present in the database to facilitate easier data access and analysis. This involved setting up a SQL database and establishing a connection to the data lake, for seamless data transfer and management.
 
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Data%20Loading.png?raw=true)
 
 ## Data Reporting
-In the final phase of our journey, we unlock the true value of our data through immersive data reporting and visualization. Connecting Microsoft Power BI to Azure Synapse, we harness the rich insights stored in our SQL databases and craft interactive and insightful data visualizations. From dynamic dashboards to granular reports, Power BI empowers stakeholders to explore data trends, uncover hidden patterns, and derive actionable insights to drive strategic decision-making.
 
-Connected Microsoft Power BI to Azure Synapse and used the Views of the DB to create interactive and insightful data visualizations.
-PowerBI-dashboard
+In the final phase of Data visualization, I tried to include various charts to gain the valuable insights from the data. By connecting Microsoft Power BI to Azure Synapse, I used Azure SQL databases and create interactive and insightful data visualizations. From dynamic dashboards to detailed reports, Power BI enables stakeholders to explore data trends, uncover hidden patterns, and derive actionable insights to guide strategic decision-making.
+
+Additionally, during this phase:
+
+I created bar charts to analyze sales by project category.
+I used pie charts to examine sales by gender.
+I tried slicers to display the number of products.
+I used cards to showcase total sales, revenue, total number of products, total number of customers, and the month & year.
+
 
 ![Alt text](https://github.com/rahulbmogal/Data-Engineering-projects/blob/main/Adventure%20Works%20End%20to%20End%20data%20Engineering%20Project/Adventure%20Works%20Sales%20Analysis.png?raw=true)
 
